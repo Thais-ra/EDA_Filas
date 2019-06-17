@@ -1,47 +1,47 @@
 #define MAX 10
 
-int Frente, Tras, valor;
-int Fila[MAX];
+int u, p, valor;
+int fila[MAX];
 
-void Cria_Fila(){
-    Frente = 0;
-    Tras = 0; 
+void cria_fila(){
+    u = 0;
+    p = 0; 
 }
 
-int Fila_Enfileirar(int valor){
-    if (Fila_Cheia()){
+int enfileira(int valor){
+    if (fila_Cheia()){
         return 0;
     } else {
-        Fila[Tras++] = valor;
+        fila[p++] = valor;
         return 1;
     }
 }
 
-int Fila_Desenfileirar(){
-    if (Fila_Vazia()){
+int desenfileira(){
+    if (fila_Vazia()){
         return 0;
     } else {
-        return Fila[Frente++];
+        return fila[u++];
     }
 }
 
-int Fila_Cheia(){
-    return Tras == MAX;
+int fila_cheia(){
+    return p == MAX;
 }
 
-int Fila_Vazia(){
-    return Frente == Tras;
+int fila_vazia(){
+    return u == p;
 }
 
-int Fila_Tamanho(){
-    return Tras -1;
+int tam_fila(){
+    return p -1;
 }
 
-void Fila_Imprimir(){
+void imprimir_fila(){
     for(int i=0;i<MAX;i++){
-        printf("%d", Fila[i]);
+        printf("%d", fila[i]);
     }
-    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", Fila[Frente], Fila[Tras]);
+    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", fila[u], fila[p]);
 }
 
 

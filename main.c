@@ -12,7 +12,7 @@ void inserir()
     for(int i=1;i<=n_elementos;i++){
         printf("Elemento %d: ", i);
         scanf("%d", &elemento);
-        if (!Fila_Enfileirar(elemento))
+        if (!enfileira(elemento))
             excesso++;
     }
     if (excesso)
@@ -24,8 +24,8 @@ void remover(){
     int quant_remov, i=0, valor;
     scanf("%d", &quant_remov);
     while(i!=quant_remov){
-        if(!Fila_Vazia()){
-            valor = Fila_Desenfileirar();
+        if(!fila_vazia()){
+            valor = desenfileira();
             printf("Número %d removido\n", valor);
         } else {
             printf("Não é possivel remover mais elementos, a fila está vazia.\n");
