@@ -10,24 +10,30 @@ void cria_fila()
    p = 0; u = 0;
 }
 
-int enfileira(int c)
+int enfileira(int y)
 {
    int ret = 1;
-   if (u == N - 1) 
+   if ( fila_cheia())
       ret = redimensiona();
-   if (ret) 
-      fila[u++] = c;
+   if (ret)
+   {
+      fila[u++] = y;
+      if (u == N)
+         u = 0;
+   }
    return ret;
 }
 
-int desenfileira(int *c)
+int desenfileira(int *y)
 {
    if (!fila_vazia())
    {
-      *c = fila[p++];
+      *y = fila[p++];
       if (p == N) 
          p = 0;
+      return 1;
    }
+   return 0;
 }
 
 int tam_fila()
@@ -57,10 +63,10 @@ int redimensiona()
 {
    int i, j;
    
-   fila = (int*) realloc(fila, 2 * N * sizeof(char));
+   fila = (int*) realloc(fila, 2 * N * sizeof(int));
    if (fila == NULL)
       return 0;
-   if (u - 1 < N - p)
+   if (u != N - 1)
    {
       for (i = N, j = 0; j < u; i++, j++)
       {
