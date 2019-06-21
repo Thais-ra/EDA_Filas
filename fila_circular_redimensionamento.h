@@ -3,6 +3,13 @@
 static int *fila;
 static int N, p, u;
 
+void imprimir_fila(){
+    for(int i = 0 ;i < N; i++){
+        printf("%d ", fila[i]);
+    }
+    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", fila[p], fila[u]);
+}
+
 void cria_fila()
 {
    N = 10;
@@ -13,7 +20,7 @@ void cria_fila()
 int enfileira(int y)
 {
    int ret = 1;
-   if ( fila_cheia())
+   if (fila_cheia())
       ret = redimensiona();
    if (ret)
    {
