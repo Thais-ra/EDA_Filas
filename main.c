@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fila_vet.h"
+#include "fila_circular_redimensionamento.h"
 
 int opcao;
 void inserir()
@@ -21,7 +21,7 @@ void inserir()
 void remover() 
 {
     printf("Quantos elementos deseja remover da fila? ");
-    int quant_remov, i=0, valor;
+    int quant_remov, i = 0, valor;
     scanf("%d", &quant_remov);
     while(i != quant_remov) 
     {
@@ -53,23 +53,16 @@ void menu()
     {
     case 1:
         inserir();
-        
-    break;
-
+        break;
     case 2:
         remover();
-        
-    break;
-
+        break;
     case 3:
         imprimir_fila();
-        
-    break;
-
+        break;
     case 0:
         exit(1);
-    break;
-
+        break;
     default:
         printf("Essa opção nao e valida! Tente novamente: \n");
     }
