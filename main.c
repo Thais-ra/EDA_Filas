@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fila_vet.h"
+#include "fila_circular_redimensionamento.h"
 
 int opcao;
-
 void inserir()
 {
     int n_elementos, elemento, excesso=0;
@@ -19,13 +18,16 @@ void inserir()
         printf("%d elemento(s) não inseridos, fila cheia!\n", excesso);
 }
 
-void remover(){
+void remover() 
+{
     printf("Quantos elementos deseja remover da fila? ");
     int quant_remov, i=0, valor;
     scanf("%d", &quant_remov);
-    while(i!=quant_remov){
-        if(!fila_vazia()){
-            valor = desenfileira();
+    while(i != quant_remov) 
+    {
+        if(!fila_vazia()) 
+        {
+            desenfileira(&valor);
             printf("Número %d removido\n", valor);
         } else {
             printf("Não é possivel remover mais elementos, a fila está vazia.\n");
@@ -36,7 +38,8 @@ void remover(){
 
 }
 
-void menu(){
+void menu() 
+{
     printf("----------------MENU----------------\n");
     printf("\n");
     printf("1 - Inserir elementos na fila\n");
@@ -46,22 +49,21 @@ void menu(){
     printf("\n");
     printf("Digite a opção desejada: ");
     scanf("%d", &opcao);
-
     switch (opcao)
     {
     case 1:
         inserir();
-        menu();
+        
     break;
 
     case 2:
         remover();
-        menu();
+        
     break;
 
     case 3:
-        Fila_Imprimir();
-        menu();
+        imprimir_fila();
+        
     break;
 
     case 0:
@@ -70,13 +72,14 @@ void menu(){
 
     default:
         printf("Essa opção não é valida! Tente novamente: \n");
-        return menu();
     }
 }
 
 int main(){
 
-    menu();
-
+    cria_fila();
+    while(1 == 1) {
+        menu();
+    }
     return 0;
 }

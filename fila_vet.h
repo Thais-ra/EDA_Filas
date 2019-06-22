@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define MAX 10
 
 int u, p, valor;
@@ -8,8 +10,12 @@ void cria_fila(){
     p = 0; 
 }
 
+int fila_vazia(){
+    return u == p;
+}
+
 int enfileira(int valor){
-    if (fila_Cheia()){
+    if (fila_cheia()){
         return 0;
     } else {
         fila[p++] = valor;
@@ -17,10 +23,11 @@ int enfileira(int valor){
     }
 }
 
-int desenfileira(){
-    if (fila_Vazia()){
+int desenfileira(int *y){
+    if (fila_vazia()){
         return 0;
     } else {
+        *y = fila[u++];
         return fila[u++];
     }
 }
@@ -29,19 +36,40 @@ int fila_cheia(){
     return p == MAX;
 }
 
-int fila_vazia(){
-    return u == p;
-}
-
 int tam_fila(){
     return p -1;
 }
 
 void imprimir_fila(){
-    for(int i=0;i<MAX;i++){
-        printf("%d", fila[i]);
+    printf(" ");
+   for (int i = 0; i < MAX; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+    for(int i = 0;i < MAX; i++){
+        printf("| %03d ", fila[i]);
     }
-    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", fila[u], fila[p]);
+    printf(" |\n ");
+   for (int i = 0; i < MAX; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+   for(int i = 0; i < MAX; i++)
+   {
+      if (i == p) 
+      {
+         printf("   P  ");
+      } else if (i == u) 
+      {
+         printf("   U  ");
+      } else
+      {
+         printf("      ");
+      }
+      
+   }
 }
 
 
