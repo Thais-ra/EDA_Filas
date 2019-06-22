@@ -11,14 +11,14 @@ void cria_fila(){
 }
 
 int fila_vazia(){
-    return u == p;
+    return p == u;
 }
 
 int enfileira(int valor){
     if (fila_cheia()){
         return 0;
     } else {
-        fila[p++] = valor;
+        fila[u++] = valor;
         return 1;
     }
 }
@@ -27,13 +27,13 @@ int desenfileira(int *y){
     if (fila_vazia()){
         return 0;
     } else {
-        *y = fila[u++];
-        return fila[u++];
+        *y = fila[p++];
+        return 1;
     }
 }
 
 int fila_cheia(){
-    return p == MAX;
+    return u == MAX;
 }
 
 int tam_fila(){

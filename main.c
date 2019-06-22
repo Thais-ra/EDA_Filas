@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "fila_circular_redimensionamento.h"
+#include "fila_vet.h"
 
 int opcao;
 void inserir()
@@ -15,7 +15,7 @@ void inserir()
             excesso++;
     }
     if (excesso)
-        printf("%d elemento(s) não inseridos, fila cheia!\n", excesso);
+        printf("%d elemento(s) nao inseridos, fila cheia!\n", excesso);
 }
 
 void remover() 
@@ -28,9 +28,9 @@ void remover()
         if(!fila_vazia()) 
         {
             desenfileira(&valor);
-            printf("Número %d removido\n", valor);
+            printf("Numero %d removido\n", valor);
         } else {
-            printf("Não é possivel remover mais elementos, a fila está vazia.\n");
+            printf("Nao e possivel remover mais elementos, a fila esta vazia.\n");
             break;
         }
         i++;
@@ -47,7 +47,7 @@ void menu()
     printf("3 - Imprimir fila\n");
     printf("0 - Sair\n");
     printf("\n");
-    printf("Digite a opção desejada: ");
+    printf("Digite a opcao desejada: ");
     scanf("%d", &opcao);
     switch (opcao)
     {
@@ -71,8 +71,11 @@ void menu()
     break;
 
     default:
-        printf("Essa opção não é valida! Tente novamente: \n");
+        printf("Essa opção nao e valida! Tente novamente: \n");
     }
+    printf("\n");
+    system("pause");
+    system("cls || clear");
 }
 
 int main(){
