@@ -27,7 +27,7 @@ int desenfileira(int *y){
     if (fila_vazia()){
         return 0;
     } else {
-        *y = fila[u++]
+        *y = fila[u++];
         return fila[u++];
     }
 }
@@ -41,10 +41,35 @@ int tam_fila(){
 }
 
 void imprimir_fila(){
-    for(int i=0;i<MAX;i++){
-        printf("%d ", fila[i]);
+    printf(" ");
+   for (int i = 0; i < MAX; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+    for(int i = 0;i < MAX; i++){
+        printf("| %03d ", fila[i]);
     }
-    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", fila[u], fila[p]);
+    printf(" |\n ");
+   for (int i = 0; i < MAX; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+   for(int i = 0; i < MAX; i++)
+   {
+      if (i == p) 
+      {
+         printf("   P  ");
+      } else if (i == u) 
+      {
+         printf("   U  ");
+      } else
+      {
+         printf("      ");
+      }
+      
+   }
 }
 
 

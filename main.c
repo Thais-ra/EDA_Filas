@@ -53,17 +53,17 @@ void menu()
     {
     case 1:
         inserir();
-        menu();
+        
     break;
 
     case 2:
         remover();
-        menu();
+        
     break;
 
     case 3:
         imprimir_fila();
-        menu();
+        
     break;
 
     case 0:
@@ -72,14 +72,14 @@ void menu()
 
     default:
         printf("Essa opção não é valida! Tente novamente: \n");
-        return menu();
     }
 }
 
 int main(){
 
     cria_fila();
-    menu();
-
+    while(1 == 1) {
+        menu();
+    }
     return 0;
 }

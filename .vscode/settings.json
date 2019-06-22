@@ -2,6 +2,7 @@
    "files.associations": {
       "stdlib.h": "c",
       "stdio.h": "c",
-      "fila_vet.h": "c"
+      "fila_vet.h": "c",
+      "iostream": "cpp"
    }
 }

@@ -3,11 +3,38 @@
 static int *fila;
 static int N, p, u;
 
-void imprimir_fila(){
-    for(int i = 0 ;i < N; i++){
-        printf("%d ", fila[i]);
-    }
-    printf("\nPrimeiro -> %d\nÚltimo -> %d\n", fila[p], fila[u]);
+void imprimir_fila()
+{
+   printf(" ");
+   for (int i = 0; i < N; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+   for(int i = 0 ;i < N; i++) 
+   {
+     printf("| %03d ", fila[i]);
+   }
+   printf(" |\n ");
+   for (int i = 0; i < N; i++)
+   {
+      printf("------");
+   }
+   printf("\n");
+   for(int i = 0; i < N; i++)
+   {
+      if (i == p) 
+      {
+         printf("   P  ");
+      } else if (i == u) 
+      {
+         printf("   U  ");
+      } else
+      {
+         printf("      ");
+      }
+      
+   }
 }
 
 void cria_fila()
